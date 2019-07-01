@@ -10,7 +10,7 @@ RUN mkdir -p /elasticsearch/plugins/ik
 RUN wget https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v$ELASTICSEARCH_VERSION/elasticsearch-analysis-ik-$ELASTICSEARCH_VERSION.zip
 RUN unzip -o elasticsearch-analysis-ik-$ELASTICSEARCH_VERSION.zip -d /elasticsearch/plugins/ik/
 RUN rm -f elasticsearch-analysis-ik-$ELASTICSEARCH_VERSION.zip
-RUN chown elasticsearch:elasticsearch elasticsearch
+RUN chown -R elasticsearch:elasticsearch elasticsearch
 USER elasticsearch
 EXPOSE 9200
 EXPOSE 9300
