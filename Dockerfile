@@ -13,5 +13,5 @@ RUN wget https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v$
 RUN unzip -o elasticsearch-analysis-ik-$ELASTICSEARCH_VERSION.zip -d /elasticsearch/plugins/ik/
 RUN rm -f elasticsearch-analysis-ik-$ELASTICSEARCH_VERSION.zip
 EXPOSE 9200
-EXPOSE 9300教师教师教师、
+EXPOSE 9300
 CMD ["/elasticsearch/bin/elasticsearch"]
