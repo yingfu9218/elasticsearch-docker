@@ -1,6 +1,6 @@
 FROM openjdk:8-jre
-ENV ELASTICSEARCH_VERSION 5.6.9 
-ARG ELASTICSEARCH_VERSION=5.6.9 
+ENV ELASTICSEARCH_VERSION 6.8.0 
+ARG ELASTICSEARCH_VERSION=6.8.0 
 RUN  wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-"$ELASTICSEARCH_VERSION".tar.gz  -O elasticsearch.tar.gz
 RUN  tar -zxvf elasticsearch.tar.gz
 RUN  rm -f elasticsearch.tar.gz
