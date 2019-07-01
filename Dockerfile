@@ -6,9 +6,10 @@ RUN  tar -zxvf elasticsearch.tar.gz
 RUN  rm -f elasticsearch.tar.gz
 RUN useradd elasticsearch
 RUN mv elasticsearch-$ELASTICSEARCH_VERSION elasticsearch
-RUN ./elasticsearch/bin/elasticsearch-plugin install -b ingest-attachment
-RUN ./elasticsearch/bin/elasticsearch-plugin install  https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v$ELASTICSEARCH_VERSION/elasticsearch-analysis-ik-$ELASTICSEARCH_VERSION.zip
-RUN chown -R elasticsearch elasticsearch
+RUN mkdir ./elasticsearch/plugins/ik
+RUN wget https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v$ELASTICSEARCH_VERSION/elasticsearch-analysis-ik-$ELASTICSEARCH_VERSION.zip
+RUN unzip -o elasticsearch-analysis-ik-$ELASTICSEARCH_VERSION.zip -d ./elasticsearch/plugins/ik/
+RUN rm -f elasticsearch-analysis-ik-$ELASTICSEARCH_VERSION.zip
 USER elasticsearch
 EXPOSE 9200
 EXPOSE 9300
