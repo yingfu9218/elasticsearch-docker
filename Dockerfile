@@ -8,10 +8,10 @@ RUN useradd elasticsearch
 RUN mv elasticsearch-$ELASTICSEARCH_VERSION elasticsearch
 RUN chown elasticsearch:elasticsearch elasticsearch
 USER elasticsearch
-RUN mkdir ./elasticsearch/plugins/ik
+RUN mkdir /elasticsearch/plugins/ik
 RUN wget https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v$ELASTICSEARCH_VERSION/elasticsearch-analysis-ik-$ELASTICSEARCH_VERSION.zip
-RUN unzip -o elasticsearch-analysis-ik-$ELASTICSEARCH_VERSION.zip -d ./elasticsearch/plugins/ik/
+RUN unzip -o elasticsearch-analysis-ik-$ELASTICSEARCH_VERSION.zip -d /elasticsearch/plugins/ik/
 RUN rm -f elasticsearch-analysis-ik-$ELASTICSEARCH_VERSION.zip
 EXPOSE 9200
-EXPOSE 9300
+EXPOSE 9300教师教师教师、
 CMD ["/elasticsearch/bin/elasticsearch"]
